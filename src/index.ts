@@ -1,4 +1,4 @@
-import { getTestData } from "./testData";
+import { getTestData } from './testData';
 import moment from 'moment-timezone';
 
 require('source-map-support').install();
@@ -8,19 +8,19 @@ require('source-map-support').install();
  */
 
 export interface Locale {
-    openingTimes: OpeningTime[]
-    pauseActions: PauseAction[]
-    timezone: string
+    openingTimes: OpeningTime[];
+    pauseActions: PauseAction[];
+    timezone: string;
 }
 
 export interface OpeningTime {
-    start: string,
-    end: string
+    start: string;
+    end: string;
 }
 
 export interface PauseAction {
-    action: 'pause' | 'unpause',
-    datetime: string
+    action: 'pause' | 'unpause';
+    datetime: string;
 }
 
 /**

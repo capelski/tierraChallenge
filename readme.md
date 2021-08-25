@@ -4,15 +4,15 @@ This challenge is to check that you are able to set up a node project and comple
 
 # The task
 
-Go to `index.ts` and you'll see some interfaces and a function clled `getTimePaused`. This function is your task. It takes 3 arguments: a locale, a start date and an end date. 
+Go to `index.ts` and you'll see some interfaces and a function clled `getTimePaused`. This function is your task. It takes 3 arguments: a locale, a start date and an end date.
 
 ## The Locale Object
 
 The locale contains information pertaining to a specific restaurant.
 
-- You have its opening times, which are an Array of 7 elements, with index 0 representing Monday and 6 Sunday. Each of these elements have a start time, and an end time, and the times are in local time.
-- You have a timezone string, as defined by the tz database (read more here: https://en.wikipedia.org/wiki/Tz_database).
-- You have a list of pause actions. Each action has an action name, either "pause" or "unpause" and a datetime. Any pause action can only be followed by an unpase action, and vice versa. These actions come in ascending order of datetime. The datetime is in UTC, not local time.
+-   You have its opening times, which are an Array of 7 elements, with index 0 representing Monday and 6 Sunday. Each of these elements have a start time, and an end time, and the times are in local time.
+-   You have a timezone string, as defined by the tz database (read more here: https://en.wikipedia.org/wiki/Tz_database).
+-   You have a list of pause actions. Each action has an action name, either "pause" or "unpause" and a datetime. Any pause action can only be followed by an unpase action, and vice versa. These actions come in ascending order of datetime. The datetime is in UTC, not local time.
 
 ## `start` and `end` arguments
 
