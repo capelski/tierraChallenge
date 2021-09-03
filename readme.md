@@ -30,7 +30,7 @@ The return value of the function is an integer, representing the total time paus
 
 # Setting up the project
 
-This is a small node project, written in typescript and using Jest for testing. If you're unfamiliar with typescript, don't worry regarding your answer – it can be written in pure javascript. That said, be sure you know how to compile index.ts into javascript. All the necessary node packages to do so have been provided.
+This is a small node project, written in typescript and using cucumber js for testing. If you're unfamiliar with typescript, don't worry regarding your answer – it can be written in pure javascript. That said, be sure you know how to compile index.ts into javascript. All the necessary node packages to do so have been provided.
 
 ## installation
 
@@ -38,13 +38,11 @@ If you have node and npm installed on your computer, you can simply run `npm ins
 
 `docker run -v "$PWD":/usr/src/app -w /usr/src/app node npm install`
 
-This will create the node_modules folder and allow jest to run its tests. You can do so by running
+This will create the node_modules folder and allow cucumber js to run its tests. You can do so by running
 
-`npm test` or `npm test -- --watch` if you want the test to rerun each time a change is made. To run the test via docker use:
+`npm test`. To run the test via docker use:
 
 `docker run -v "$PWD":/usr/src/app -w /usr/src/app node npm run test`
-
-But it might be easier to add a Jest module to your text editor of choice
 
 If you want to run the node app, first you will need to transpile the typescript into javascript. If you're running node, you can simply run `tsc --watch`, or if using docker:
 
