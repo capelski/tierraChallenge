@@ -75,3 +75,29 @@ Feature: Pause/unpause
         And registering a "pause" at "2021-03-30T17:01:45.021Z"
         And registering a "unpause" at "2021-03-30T19:23:12.554Z"
         Then the paused time between "2021-03-26T13:00:00Z" and "2021-03-26T13:05:00Z" is 0
+
+    Scenario: 1h pause during business hours
+        Given a restaurant in "Europe/London" timezone
+        And with opening times "12:00" to "23:00" on "Monday"
+        And with opening times "12:00" to "23:00" on "Tuesday"
+        And with opening times "12:00" to "23:00" on "Wednesday"
+        And with opening times "12:00" to "23:00" on "Thursday"
+        And with opening times "12:00" to "23:00" on "Friday"
+        And with opening times "12:00" to "23:00" on "Saturday"
+        And with opening times "12:00" to "23:00" on "Sunday"
+        When registering a "pause" at "2021-02-17T12:05:12.003Z"
+        And registering a "unpause" at "2021-02-17T13:05:12.003Z"
+        Then the paused time between "2021-02-17T00:00:00.000Z" and "2021-02-18T00:00:00.000Z" is 3600000
+
+    Scenario: 1h pause outside business hours
+        Given a restaurant in "Europe/London" timezone
+        And with opening times "12:00" to "23:00" on "Monday"
+        And with opening times "12:00" to "23:00" on "Tuesday"
+        And with opening times "12:00" to "23:00" on "Wednesday"
+        And with opening times "12:00" to "23:00" on "Thursday"
+        And with opening times "12:00" to "23:00" on "Friday"
+        And with opening times "12:00" to "23:00" on "Saturday"
+        And with opening times "12:00" to "23:00" on "Sunday"
+        When registering a "pause" at "2021-02-17T23:30:37.783Z"
+        And registering a "unpause" at "2021-02-18T00:30:37.783Z"
+        Then the paused time between "2021-02-17T00:00:00.000Z" and "2021-02-19T00:00:00.000Z" is 0
